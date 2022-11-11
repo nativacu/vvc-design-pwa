@@ -1,0 +1,63 @@
+@import "../../styles.scss";
+
+.not-selected-menu {
+  height: 100%;
+
+  .menu {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    height: 100%;
+
+    gap: 32px;
+  }
+
+  .menu-entry {
+    width: 14%;
+    height: 20%;
+  }
+
+}
+
+.work-gallery {
+  background-color: black;
+  padding: 16px;
+}
+
+
+.selected-menu {
+  height: 25%;
+  width: 100%;
+  display: flex;
+  justify-content: start;
+
+  .selected-image {
+    width: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      max-height: 80%;
+    }
+  }
+  .menu {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    height: 100%;
+    width: 85%;
+
+    gap: 32px;
+  }
+
+  .menu-entry {
+    width: 13%;
+    height: 10em;
+  }
+
+}

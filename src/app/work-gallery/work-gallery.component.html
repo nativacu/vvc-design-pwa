@@ -1,0 +1,33 @@
+
+<div class="work-gallery"
+     [ngStyle]="{'height': selectedIndex >= 0 ? 'auto': '100%' }"
+>
+  <ng-content *ngTemplateOutlet="selectedIndex >= 0 ? itemSelected : notSelected"></ng-content>
+</div>
+<ng-template #notSelected>
+  <div class="not-selected-menu">
+    <div class="menu">
+      <div class="menu-entry" *ngFor="let item of menuItems">
+        <app-menu-button (clicked)="modifyMenu($event)" class="h-100" [assetSrc]="'menu-item-'+item+'.png'"></app-menu-button>
+      </div>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #itemSelected>
+  <div class="selected-menu">
+    <div class="selected-image">
+      {{selectedIndex}}
+      <img [src]="'../../assets/menu-item-images/menu-item-'+selectedIndex+'.png'">
+    </div>
+    <div class="menu">
+      <div class="menu-entry" *ngFor="let item of menuItems">
+        <app-menu-button class="h-100"
+                         [assetSrc]="item === selectedIndex ? 'black-square.svg' : 'menu-item-'+item+'.png'"
+                         [index]=item (clicked)="modifyMenu($event)"></app-menu-button>
+      </div>
+    </div>
+  </div>
+
+</ng-template>
+
